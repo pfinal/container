@@ -20,13 +20,16 @@ class Container extends \Pimple\Container
     public function make($abstract, array $parameters = array())
     {
         if ($this->offsetExists($abstract)) {
-            return $this->offsetGet($abstract);
+            $abstract = $this->offsetGet($abstract);
+            if (is_object($abstract)) {
+                return $abstract;
+            }
         }
 
-        $ref = new \ReflectionClass($abstract);
+        $ref = new \ReflectionClass((string)$abstract);
         $constructor = $ref->getConstructor();
         if ($constructor === null) {
-            return new $abstract;
+            return new $abstract();
         }
 
         $arguments = array();
