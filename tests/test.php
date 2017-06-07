@@ -1,5 +1,5 @@
 <?php
-
+/*
 require __DIR__ . '/../vendor/autoload.php';
 
 
@@ -31,6 +31,7 @@ class News
 
 
 $app = new \PFinal\Container\Container();
+*/
 
 /*
 $app['str'] = 'abc';
@@ -142,8 +143,10 @@ var_dump($app['abc']);//stdClass
 var_dump($app->raw('abc'));//Closure 注册服务的那个原始函数
 */
 
+/*
 //注册接口的服务类
 $app['IDB']=function ($app){return new DB();};
 $news = $app->make('News',['userId'=>1]);
 var_dump($news);
 
+*/
