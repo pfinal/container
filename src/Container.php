@@ -2,14 +2,26 @@
 
 namespace PFinal\Container;
 
+use Psr\Container\ContainerInterface;
+
 /**
  * 容器
  *
  * @author  Zou Yiliang
  * @since   1.0
  */
-class Container extends \Pimple\Container
+class Container extends \Pimple\Container implements ContainerInterface
 {
+    public function get($id)
+    {
+        return $this[$id];
+    }
+
+    public function has($id)
+    {
+        return isset($this[$id]);
+    }
+
     /**
      * 从容器中解析给定的类型
      *
