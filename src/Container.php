@@ -5,7 +5,7 @@ namespace PFinal\Container;
 use Psr\Container\ContainerInterface;
 
 /**
- * 容器
+ * Container
  *
  * @author  Zou Yiliang
  * @since   1.0
